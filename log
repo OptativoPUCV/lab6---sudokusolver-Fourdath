@@ -46,3 +46,9 @@ sudoku.c:60:16: error: implicit declaration of function ‘append’ [-Werror=im
 cc1: all warnings being treated as errors
 Compilation failed
 2850c93
+Sat 06 May 2023 05:21:34 AM UTC: 
+ sudoku.c | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
+ tests:  2|4
+total_score: 15/70
+6ba406a
