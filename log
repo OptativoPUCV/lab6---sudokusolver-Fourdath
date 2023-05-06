@@ -577,3 +577,13 @@ sudoku.c:126:13: error: implicit declaration of function ‘isEmptyStack’ [-We
 cc1: all warnings being treated as errors
 Compilation failed
 d537819
+Sat 06 May 2023 11:25:31 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:13: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  126 |     while (S->size > 0) {
+      |             ^~
+Compilation failed
+534ba53
