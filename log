@@ -685,3 +685,26 @@ sudoku.c:139:9: error: implicit declaration of function ‘freeNode’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 22d6855
+Sat 06 May 2023 11:30:53 PM UTC: 
+ sudoku.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:127:22: error: implicit declaration of function ‘back’ [-Werror=implicit-function-declaration]
+  127 |         Node* node = back(S);
+      |                      ^~~~
+sudoku.c:127:22: error: initialization of ‘Node *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:129:13: error: implicit declaration of function ‘destroyList’ [-Werror=implicit-function-declaration]
+  129 |             destroyList(S);
+      |             ^~~~~~~~~~~
+sudoku.c:133:25: error: implicit declaration of function ‘get_adjacent_nodes’; did you mean ‘get_adj_nodes’? [-Werror=implicit-function-declaration]
+  133 |         List* adjList = get_adjacent_nodes(node);
+      |                         ^~~~~~~~~~~~~~~~~~
+      |                         get_adj_nodes
+sudoku.c:133:25: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:138:9: error: implicit declaration of function ‘destroyNode’ [-Werror=implicit-function-declaration]
+  138 |         destroyNode(node);
+      |         ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6741147

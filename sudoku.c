@@ -124,25 +124,26 @@ Node* DFS(Node* n, int* cont) {
     pushBack(S, n);
     
     while (!is_empty(S)) {
-        Node* node = (Node*) popBack(S);
-        if (isFinal(node)) {
-            freeList(S);
+        Node* node = back(S);
+        if (is_final(node)) {
+            destroyList(S);
             return node;
         }
         
-        List* adjList = getAdjacents(node);
-        Node* adjNode;
-        for (adjNode = front(adjList); adjNode != NULL; adjNode = (Node*) next(adjList)) {
+        List* adjList = get_adjacent_nodes(node);
+        for (Node* adjNode = front(adjList); adjNode != NULL; adjNode = next(adjList)) {
             pushBack(S, adjNode);
         }
         
-        freeNode(node);
-        freeList(adjList);
+        destroyNode(node);
+        destroyList(adjList);
+        popBack(S);
     }
     
-    freeList(S);
+    destroyList(S);
     return NULL;
 }
+
 
 
 
