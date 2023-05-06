@@ -136,7 +136,7 @@ Node* DFS(Node* initial, int* cont){
       adj_node = (Node *)adj_list->items[i];
       push(S, adj_node); 
     }
-    freeList(adj_list); 
+    //freeList(adj_list); 
     free(current); 
   }
   return NULL;
