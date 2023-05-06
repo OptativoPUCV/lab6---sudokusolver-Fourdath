@@ -123,7 +123,7 @@ Node* DFS(Node* n, int* cont) {
     List* S = createList();
     pushBack(S, n);
     
-    while (S->size > 0) {
+    while (!is_empty(S)) {
         Node* node = (Node*) popBack(S);
         if (isFinal(node)) {
             freeList(S);
@@ -131,7 +131,7 @@ Node* DFS(Node* n, int* cont) {
         }
         
         List* adjList = getAdjacents(node);
-        for (Node* adjNode = (Node*) front(adjList); adjNode != NULL; adjNode = (Node*)next(adjList)) { 
+        for (Node* node = pop(S); front(adjList); adjNode != NULL; adjNode = (Node*) next(adjList)) {
             pushBack(S, adjNode);
         }
         
@@ -142,7 +142,6 @@ Node* DFS(Node* n, int* cont) {
     freeList(S);
     return NULL;
 }
-
 
 
 
