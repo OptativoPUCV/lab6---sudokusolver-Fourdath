@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
-#include "stack.h"
 
 
 typedef struct{
