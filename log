@@ -552,3 +552,17 @@ test.c:230:11: error: assignment to ‘int *’ from ‘int’ makes pointer fro
 cc1: all warnings being treated as errors
 Compilation failed
 2c2349b
+Sat 06 May 2023 11:24:02 PM UTC: 
+ sudoku.c | 118 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 118 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:13: error: implicit declaration of function ‘isEmptyStack’ [-Werror=implicit-function-declaration]
+  126 |     while (!isEmptyStack(S)) {
+      |             ^~~~~~~~~~~~
+sudoku.c:142:20: error: expected expression before ‘/’ token
+  142 |         (*cont)++; /
+      |                    ^
+cc1: all warnings being treated as errors
+Compilation failed
+5abd926
