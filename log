@@ -303,3 +303,26 @@ sudoku.c:146:1: error: expected identifier or ‘(’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 6880682
+Sat 06 May 2023 11:16:58 PM UTC: 
+ sudoku.c | 2 --
+ 1 file changed, 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:11: error: implicit declaration of function ‘isStackEmpty’ [-Werror=implicit-function-declaration]
+  126 |   while (!isStackEmpty(S)) {
+      |           ^~~~~~~~~~~~
+sudoku.c:127:21: error: void value not ignored as it ought to be
+  127 |     Node *current = pop(S);
+      |                     ^~~
+sudoku.c:136:33: error: invalid use of incomplete typedef ‘List’
+  136 |     for (int i = 0; i < adj_list->size; i++) {
+      |                                 ^~
+sudoku.c:137:34: error: invalid use of incomplete typedef ‘List’
+  137 |       adj_node = (Node *)adj_list->items[i];
+      |                                  ^~
+sudoku.c:140:5: error: implicit declaration of function ‘destroyList’ [-Werror=implicit-function-declaration]
+  140 |     destroyList(adj_list);
+      |     ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1cdcee1
