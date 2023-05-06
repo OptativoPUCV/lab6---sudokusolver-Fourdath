@@ -352,3 +352,32 @@ sudoku.c:141:5: error: implicit declaration of function ‘destroyList’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 ae47d96
+Sat 06 May 2023 11:21:16 PM UTC: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:11: error: implicit declaration of function ‘stackIsEmpty’ [-Werror=implicit-function-declaration]
+  126 |   while (!stackIsEmpty(S)) {
+      |           ^~~~~~~~~~~~
+sudoku.c:127:21: error: void value not ignored as it ought to be
+  127 |     Node *current = pop(S);
+      |                     ^~~
+sudoku.c:131:7: error: implicit declaration of function ‘destroyStack’ [-Werror=implicit-function-declaration]
+  131 |       destroyStack(S);
+      |       ^~~~~~~~~~~~
+sudoku.c:137:25: error: implicit declaration of function ‘listSize’ [-Werror=implicit-function-declaration]
+  137 |     for (int i = 0; i < listSize(adj_list); i++) {
+      |                         ^~~~~~~~
+sudoku.c:138:25: error: implicit declaration of function ‘listGet’ [-Werror=implicit-function-declaration]
+  138 |       adj_node = (Node*)listGet(adj_list, i);
+      |                         ^~~~~~~
+sudoku.c:138:18: error: cast to pointer from integer of different size [-Werror=int-to-pointer-cast]
+  138 |       adj_node = (Node*)listGet(adj_list, i);
+      |                  ^
+sudoku.c:141:5: error: implicit declaration of function ‘destroyList’ [-Werror=implicit-function-declaration]
+  141 |     destroyList(adj_list);
+      |     ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7b5198b

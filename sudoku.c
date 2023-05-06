@@ -119,31 +119,31 @@ int is_final(Node* n){
 }
 
 
-Node* DFS(Node* initial, int* cont) {
-  Stack* S = createStack();
-  push(S, initial);
+Node* DFS(Node* initial, int* cont){
+  Stack *S = createStack(); 
+  push(S, initial); 
 
-  while (!isStackEmpty(S)) {
-    Node* current = pop(S);
-    (*cont)++;
+  while (!stackIsEmpty(S)) { 
+    Node *current = pop(S);
+    (*cont)++; 
 
     if (is_final(current)) {
       destroyStack(S);
-      return current;
+      return current; 
     }
 
-    List* adj_list = get_adj_nodes(current);
-    Node* adj_node = NULL;
-    for (int i = 0; i < adj_list->size; i++) {
-      adj_node = (Node*)adj_list->items[i];
-      push(S, adj_node);
+    List *adj_list = get_adj_nodes(current); 
+    Node *adj_node = NULL;
+    for (int i = 0; i < listSize(adj_list); i++) {
+      adj_node = (Node*)listGet(adj_list, i);
+      push(S, adj_node); 
     }
-    destroyList(adj_list);
+    destroyList(adj_list); 
   }
-
   destroyStack(S);
   return NULL;
 }
+
 
 
 
