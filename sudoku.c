@@ -47,18 +47,21 @@ int is_valid(Node* n){
 
     return 1;
 }
+
 List* get_adj_nodes(Node* n){
     List* list = createList();
-    int i, k;
-    for(i = 0; i < 9; i++){
-        for(k = 0; k < 9; k++){
-            if(n->sudo[i][k] == 0){
+    int row, col;
+    // Encuentra la siguiente casilla vacía
+    for(row = 0; row < 9; row++){
+        for(col = 0; col < 9; col++){
+            if(n->sudo[row][col] == 0){
+                // Genera los nodos adyacentes
                 int value;
                 Node* new_node;
                 for(value = 1; value <= 9; value++){
                     new_node = copy(n);
-                    new_node->sudo[i][k] = value;
-                    addElement(list, new_node);
+                    new_node->sudo[row][col] = value;
+                    appent(list, new_node);
                 }
                 return list;
             }
@@ -66,7 +69,6 @@ List* get_adj_nodes(Node* n){
     }
     return list;
 }
-
 int is_final(Node* n){
     return 0;
 }
