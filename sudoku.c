@@ -137,7 +137,7 @@ Node* DFS(Node* initial, int* cont){
             aux_node = next(adj_nodes);
         }
         clean(adj_nodes);
-        free_node(current_node);
+        //free_node(current_node);
     }
     clean(stack);
     return NULL;
