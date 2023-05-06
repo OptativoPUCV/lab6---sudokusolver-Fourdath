@@ -73,3 +73,14 @@ sudoku.c:98:23: error: implicit declaration of function ‘free_node’ [-Werror
 cc1: all warnings being treated as errors
 Compilation failed
 05be01c
+Sat 06 May 2023 08:36:47 AM UTC: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:96:22: error: ‘new_node’ may be used uninitialized [-Werror=maybe-uninitialized]
+   96 |                   if(is_valid(new_node)){
+      |                      ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1ba05cb

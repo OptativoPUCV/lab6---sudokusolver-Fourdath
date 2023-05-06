@@ -91,11 +91,12 @@ List* get_adj_nodes(Node* n){
        for (j = 0; j < 9; j++) {
            if (n->sudo[i][j] == 0) {
                int k;
+               Node* new_node;  
                for (k = 1; k <= 9; k++) {
                   if(is_valid(new_node)){
                       pushBack(list, new_node);
-                  }else{
-                      free_node(new_node);
+                  //}else{
+                     // free_node(new_node);
                   }
                 }
                return list;
