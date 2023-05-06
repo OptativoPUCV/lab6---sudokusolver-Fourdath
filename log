@@ -658,3 +658,30 @@ sudoku.c:138:9: error: implicit declaration of function ‘freeNode’; did you 
 cc1: all warnings being treated as errors
 Compilation failed
 d6e2e70
+Sat 06 May 2023 11:29:13 PM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:127:22: error: invalid use of void expression
+  127 |         Node* node = (Node*) popBack(S);
+      |                      ^
+sudoku.c:128:13: error: implicit declaration of function ‘isFinal’; did you mean ‘is_final’? [-Werror=implicit-function-declaration]
+  128 |         if (isFinal(node)) {
+      |             ^~~~~~~
+      |             is_final
+sudoku.c:129:13: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  129 |             freeList(S);
+      |             ^~~~~~~~
+      |             createList
+sudoku.c:133:25: error: implicit declaration of function ‘getAdjacents’ [-Werror=implicit-function-declaration]
+  133 |         List* adjList = getAdjacents(node);
+      |                         ^~~~~~~~~~~~
+sudoku.c:133:25: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:139:9: error: implicit declaration of function ‘freeNode’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+  139 |         freeNode(node);
+      |         ^~~~~~~~
+      |         createNode
+cc1: all warnings being treated as errors
+Compilation failed
+22d6855

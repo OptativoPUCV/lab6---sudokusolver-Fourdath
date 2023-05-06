@@ -131,7 +131,8 @@ Node* DFS(Node* n, int* cont) {
         }
         
         List* adjList = getAdjacents(node);
-        for (Node* node = pop(S); front(adjList); adjNode != NULL; adjNode = (Node*) next(adjList)) {
+        Node* adjNode;
+        for (adjNode = front(adjList); adjNode != NULL; adjNode = (Node*) next(adjList)) {
             pushBack(S, adjNode);
         }
         
@@ -142,6 +143,7 @@ Node* DFS(Node* n, int* cont) {
     freeList(S);
     return NULL;
 }
+
 
 
 
