@@ -326,3 +326,29 @@ sudoku.c:140:5: error: implicit declaration of function ‘destroyList’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 1cdcee1
+Sat 06 May 2023 11:19:12 PM UTC: 
+ sudoku.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:11: error: implicit declaration of function ‘isStackEmpty’ [-Werror=implicit-function-declaration]
+  126 |   while (!isStackEmpty(S)) {
+      |           ^~~~~~~~~~~~
+sudoku.c:127:21: error: void value not ignored as it ought to be
+  127 |     Node* current = pop(S);
+      |                     ^~~
+sudoku.c:131:7: error: implicit declaration of function ‘destroyStack’ [-Werror=implicit-function-declaration]
+  131 |       destroyStack(S);
+      |       ^~~~~~~~~~~~
+sudoku.c:137:33: error: invalid use of incomplete typedef ‘List’
+  137 |     for (int i = 0; i < adj_list->size; i++) {
+      |                                 ^~
+sudoku.c:138:33: error: invalid use of incomplete typedef ‘List’
+  138 |       adj_node = (Node*)adj_list->items[i];
+      |                                 ^~
+sudoku.c:141:5: error: implicit declaration of function ‘destroyList’ [-Werror=implicit-function-declaration]
+  141 |     destroyList(adj_list);
+      |     ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ae47d96
