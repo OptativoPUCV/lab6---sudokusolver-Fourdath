@@ -139,7 +139,7 @@ Node* DFS(Node* n, int* cont) {
         }
 
         free(adj_nodes); 
-        (*cont)++; /
+        (*cont)++; 
     }
 
     return NULL; 

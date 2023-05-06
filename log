@@ -566,3 +566,14 @@ sudoku.c:142:20: error: expected expression before ‘/’ token
 cc1: all warnings being treated as errors
 Compilation failed
 5abd926
+Sat 06 May 2023 11:24:14 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:13: error: implicit declaration of function ‘isEmptyStack’ [-Werror=implicit-function-declaration]
+  126 |     while (!isEmptyStack(S)) {
+      |             ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d537819
