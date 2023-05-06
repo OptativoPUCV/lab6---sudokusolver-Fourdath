@@ -49,25 +49,26 @@ int is_valid(Node* n){
 }
 
 List* get_adj_nodes(Node* n){
-    List* list = createList();
-    int row, col;
-    // Encuentra la siguiente casilla vacía
-    for(row = 0; row < 9; row++){
-        for(col = 0; col < 9; col++){
-            if(n->sudo[row][col] == 0){
-                // Genera los nodos adyacentes
-                int value;
-                Node* new_node;
-                for(value = 1; value <= 9; value++){
-                    new_node = copy(n);
-                    new_node->sudo[row][col] = value;
-                    addElement(list, new_node);
-                }
-                return list;
-            }
-        }
-    }
-    return list;
+   List* list=createList();
+
+   int i, j;
+   for(i=0; i<9; i++){
+       for(j=0; j<9; j++){
+           if(n->sudo[i][j] == 0){
+               Node* new_node = copy(n);
+               new_node->sudo[i][j] = 1;
+               append(list, new_node);
+               
+               new_node = copy(n);
+               new_node->sudo[i][j] = 2;
+               append(list, new_node);
+        
+               
+               return list;
+           }
+       }
+   }
+   return list;
 }
 int is_final(Node* n){
     return 0;
