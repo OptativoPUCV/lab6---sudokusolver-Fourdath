@@ -214,3 +214,35 @@ sudoku.c:136:34: error: invalid use of incomplete typedef ‘List’
 cc1: all warnings being treated as errors
 Compilation failed
 1217f00
+Sat 06 May 2023 11:15:19 PM UTC: 
+ sudoku.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:125:11: error: implicit declaration of function ‘isStackEmpty’ [-Werror=implicit-function-declaration]
+  125 |   while (!isStackEmpty(S)) {
+      |           ^~~~~~~~~~~~
+sudoku.c:126:21: error: void value not ignored as it ought to be
+  126 |     Node *current = pop(S);
+      |                     ^~~
+sudoku.c:130:7: error: implicit declaration of function ‘freeStack’; did you mean ‘createStack’? [-Werror=implicit-function-declaration]
+  130 |       freeStack(S);
+      |       ^~~~~~~~~
+      |       createStack
+sudoku.c:136:33: error: invalid use of incomplete typedef ‘List’
+  136 |     for (int i = 0; i < adj_list->size; i++) {
+      |                                 ^~
+sudoku.c:137:34: error: invalid use of incomplete typedef ‘List’
+  137 |       adj_node = (Node *)adj_list->items[i];
+      |                                  ^~
+sudoku.c:139:9: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  139 |         freeList(adj_list);
+      |         ^~~~~~~~
+      |         createList
+sudoku.c: At top level:
+sudoku.c:151:1: error: expected identifier or ‘(’ before ‘}’ token
+  151 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d08739c
