@@ -119,6 +119,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+Node* DFS(Node* initial, int* cont){
   Stack *S = createStack(); 
   push(S, initial); 
 
@@ -127,7 +128,6 @@ Node* DFS(Node* initial, int* cont){
     (*cont)++; 
 
     if (is_final(current)) {
-      freeStack(S);
       return current; 
     }
 
@@ -135,20 +135,16 @@ Node* DFS(Node* initial, int* cont){
     Node *adj_node = NULL;
     for (int i = 0; i < adj_list->size; i++) {
       adj_node = (Node *)adj_list->items[i];
-      if (is_final(adj_node)) {
-        freeList(adj_list); 
-        freeStack(S);
-        return adj_node;
-      }
       push(S, adj_node); 
     }
-    freeList(adj_list); 
-    free(current); 
+    destroyList(adj_list); 
   }
-  freeStack(S);
   return NULL;
 }
+
+  return NULL;
 }
+
 
 
 
