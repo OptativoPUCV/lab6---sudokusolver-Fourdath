@@ -84,3 +84,14 @@ sudoku.c:96:22: error: ‘new_node’ may be used uninitialized [-Werror=maybe-u
 cc1: all warnings being treated as errors
 Compilation failed
 1ba05cb
+Sat 06 May 2023 08:37:35 AM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:97:22: error: ‘new_node’ may be used uninitialized [-Werror=maybe-uninitialized]
+   97 |                   if(is_valid(new_node)){
+      |                      ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d06716c

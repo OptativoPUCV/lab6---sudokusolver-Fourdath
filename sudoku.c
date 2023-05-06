@@ -90,8 +90,9 @@ List* get_adj_nodes(Node* n){
    for (i = 0; i < 9; i++) {
        for (j = 0; j < 9; j++) {
            if (n->sudo[i][j] == 0) {
+              Node* new_node; 
                int k;
-               Node* new_node;  
+                
                for (k = 1; k <= 9; k++) {
                   if(is_valid(new_node)){
                       pushBack(list, new_node);
