@@ -162,3 +162,31 @@ sudoku.c:138:9: error: implicit declaration of function ‘free_node’ [-Werror
 cc1: all warnings being treated as errors
 Compilation failed
 ced65c1
+Sat 06 May 2023 11:08:23 PM UTC: 
+ sudoku.c | 31 ++++++++++++++++---------------
+ 1 file changed, 16 insertions(+), 15 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:123:11: error: ‘n’ undeclared (first use in this function)
+  123 |   push(S, n);
+      |           ^
+sudoku.c:123:11: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:125:11: error: implicit declaration of function ‘isStackEmpty’ [-Werror=implicit-function-declaration]
+  125 |   while (!isStackEmpty(S)) {
+      |           ^~~~~~~~~~~~
+sudoku.c:126:21: error: void value not ignored as it ought to be
+  126 |     Node *current = pop(S);
+      |                     ^~~
+sudoku.c:135:33: error: invalid use of incomplete typedef ‘List’
+  135 |     for (int i = 0; i < adj_list->size; i++) {
+      |                                 ^~
+sudoku.c:136:34: error: invalid use of incomplete typedef ‘List’
+  136 |       adj_node = (Node *)adj_list->items[i];
+      |                                  ^~
+sudoku.c:139:5: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  139 |     freeList(adj_list);
+      |     ^~~~~~~~
+      |     createList
+cc1: all warnings being treated as errors
+Compilation failed
+2d2cc3d
