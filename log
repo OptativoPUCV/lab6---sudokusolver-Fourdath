@@ -58,3 +58,18 @@ Sat 06 May 2023 06:29:57 AM UTC:
  tests:  5|3
 total_score: 35/70
 342a7da
+Sat 06 May 2023 08:35:19 AM UTC: 
+ sudoku.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:95:31: error: ‘new_node’ undeclared (first use in this function)
+   95 |                   if(is_valid(new_node)){
+      |                               ^~~~~~~~
+sudoku.c:95:31: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:98:23: error: implicit declaration of function ‘free_node’ [-Werror=implicit-function-declaration]
+   98 |                       free_node(new_node);
+      |                       ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+05be01c
