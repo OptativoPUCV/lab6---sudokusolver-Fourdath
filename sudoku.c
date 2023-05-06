@@ -61,7 +61,7 @@ List* get_adj_nodes(Node* n){
                 for(value = 1; value <= 9; value++){
                     new_node = copy(n);
                     new_node->sudo[row][col] = value;
-                    appent(list, new_node);
+                    addElement(list, new_node);
                 }
                 return list;
             }
