@@ -120,30 +120,29 @@ int is_final(Node* n){
 
 
 Node* DFS(Node* n, int* cont) {
-    Stack* S = createStack(); 
-    push(S, n);
-
+    List* S = createList();
+    pushBack(S, n);
+    
     while (S->size > 0) {
-        Node* current_node = top(S);
-        pop(S);
-
-        if (is_final(current_node)) { 
-            return current_node;
+        Node* node = (Node*) popBack(S);
+        if (isFinal(node)) {
+            freeList(S);
+            return node;
         }
-
-        List* adj_nodes = get_adj_nodes(current_node); 
-
-        Node* adj_node;
-        for (adj_node = first(adj_nodes); adj_node != NULL; adj_node =next(adj_nodes)) {       
-            push(S, adj_node);
+        
+        List* adjList = getAdjacents(node);
+        for (Node* adjNode = (Node*) front(adjList); adjNode != NULL; adjNode = (Node*)next(adjList)) { 
+            pushBack(S, adjNode);
         }
-
-        free(adj_nodes); 
-        (*cont)++; 
+        
+        freeNode(node);
+        freeList(adjList);
     }
-
-    return NULL; 
+    
+    freeList(S);
+    return NULL;
 }
+
 
 
 

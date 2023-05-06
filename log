@@ -587,3 +587,33 @@ sudoku.c:126:13: error: invalid use of incomplete typedef ‘Stack’ {aka ‘Li
       |             ^~
 Compilation failed
 534ba53
+Sat 06 May 2023 11:26:28 PM UTC: 
+ sudoku.c | 26 ++++++++++++--------------
+ 1 file changed, 12 insertions(+), 14 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:126:13: error: invalid use of incomplete typedef ‘List’
+  126 |     while (S->size > 0) {
+      |             ^~
+sudoku.c:127:22: error: invalid use of void expression
+  127 |         Node* node = (Node*) popBack(S);
+      |                      ^
+sudoku.c:128:13: error: implicit declaration of function ‘isFinal’; did you mean ‘is_final’? [-Werror=implicit-function-declaration]
+  128 |         if (isFinal(node)) {
+      |             ^~~~~~~
+      |             is_final
+sudoku.c:129:13: error: implicit declaration of function ‘freeList’; did you mean ‘createList’? [-Werror=implicit-function-declaration]
+  129 |             freeList(S);
+      |             ^~~~~~~~
+      |             createList
+sudoku.c:133:25: error: implicit declaration of function ‘getAdjacents’ [-Werror=implicit-function-declaration]
+  133 |         List* adjList = getAdjacents(node);
+      |                         ^~~~~~~~~~~~
+sudoku.c:133:25: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+sudoku.c:138:9: error: implicit declaration of function ‘freeNode’; did you mean ‘createNode’? [-Werror=implicit-function-declaration]
+  138 |         freeNode(node);
+      |         ^~~~~~~~
+      |         createNode
+cc1: all warnings being treated as errors
+Compilation failed
+20cb4f4
